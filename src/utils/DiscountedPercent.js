@@ -1,0 +1,1 @@
+export const discountedPercent = 0.2;
