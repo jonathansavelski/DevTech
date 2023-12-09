@@ -4,7 +4,6 @@ import Logo from '../../../public/assets/Logo.png';
 import Icon from './Icon';
 import { MenuContext } from "../../context/Context";
 import { useContext } from "react";
-import { useMediaQuery } from "react-responsive";
 
 const Navbar = () => {
     const ctx = useContext(MenuContext);
