@@ -17,9 +17,10 @@ import Contact from '../pages/Contact/Contact';
 import Categories from '../pages/Categories/Categories';
 import Products from '../pages/Products/Products';
 import Product from '../pages/Product/Product';
+import SearchResults from '../pages/SearchResults/SearchResults';
 // import User from '../pages/User/User';
 // import { Login } from "../pages/Login/Login";
-
+import { useState } from 'react';
 //Context
 import { useContext } from 'react';
 //import Products from '../components/Products/Products';
@@ -30,6 +31,7 @@ import { useContext } from 'react';
 
 export const Routes = () => {
     //const isAuth = useContext(AuthContext);
+
     return (
         <BrowserRouter>
             {/* <AuthProvider> */}
@@ -41,14 +43,18 @@ export const Routes = () => {
                     <Route path='about' element={<About />} />
                     <Route path='contact' element={<Contact />} />
 
-                    {/* Ruta anidada */}
                     <Route path='categories'>
                         <Route index element={<Categories />} />
                         <Route path=':category'>
                             <Route index element={<Products />} />
-                            <Route path=':products' element={<Product />} />
                         </Route>
                     </Route>
+                    <Route path='product'>
+                        <Route index element={<Product />} />
+                        <Route path=':product' element={<Product />} />
+                    </Route>
+                    <Route path='results' element={<SearchResults />} />
+
                     <Route path='*' element={<Error />} />
                 </ReactDomRoutes>
             </Layout>

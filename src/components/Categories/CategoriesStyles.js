@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const CategoriesContainer = styled.div`
+    /* background-color: #eeeeee; */
     display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0;
     h1 {
         text-align: center;
         margin-top: 0;
@@ -15,7 +15,7 @@ export const CategoriesContainer = styled.div`
 
 export const CategoriesCardContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
 	place-items: center;
 	justify-content: center;
@@ -24,6 +24,9 @@ export const CategoriesCardContainer = styled.div`
 	padding: 1rem 0;
     flex-wrap: wrap;
     @media (max-width: 1250px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+    @media (max-width: 900px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
     @media (max-width: 700px) {
@@ -36,7 +39,9 @@ export const CategoryCard = styled.div`
 	gap: 2rem;
     border: 2px solid var(--violet);
     border-top: 12px solid var(--violet);
-    max-width: 200px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
     padding: 1rem 1rem 0 1rem;
     img {
 		width: 100%;
@@ -53,7 +58,8 @@ export const CategoryCard = styled.div`
 		font-size: 1rem;
 	}
 	img {
-		width: 50px;
+		height: 50px;
+        width: fit-content;
 	}
 	@media (max-width: 900px) {
 		width: 270px;

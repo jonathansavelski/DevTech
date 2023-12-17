@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 :root {
@@ -35,6 +36,7 @@ h1 {
 }
 h2 {
     font-size: 2em;
+    margin-top: 0;
 }
 a {
     font-weight: 500;
@@ -67,6 +69,22 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    //outline: 4px auto -webkit-focus-ring-color;
 }
-`;
+`
+
+export const Subheader = styled.div`
+    background-color: var(--violet);
+    width: 100%;
+
+    h1 {
+        color: white;
+        margin-top: 0;
+        padding: 1.5rem 10.5%;
+        font-size: 32px;
+
+        @media (max-width:768px) {
+            text-align: center;
+        }
+    }
+`

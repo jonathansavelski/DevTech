@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { GlobalStyles } from './styles/GlobalStyles'
-import Routes from './routes/Routes'
-import { MenuProvider } from "./context/Context.jsx";
+import App from './App.jsx';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <MenuProvider>
-    <GlobalStyles />
-    <Routes />
-  </MenuProvider>,
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>
 )

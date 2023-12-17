@@ -5,15 +5,13 @@ export const ProductsContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0;
     h1 {
-        text-align: center;
-        margin-top: 0;
-        font-size: 2.5rem;
+        margin: 0;
     }
 `
 
 export const ProductsCardContainer = styled.div`
+    margin: 3rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
@@ -35,6 +33,7 @@ export const ProductsCard = styled.div`
     border: 2px solid var(--violet);
     border-top: 12px solid var(--violet);
     width: 350px;
+    min-height: 255px;
     padding: 1rem 1rem 0 1rem;
     img {
 		width: 100%;
@@ -80,3 +79,9 @@ export const LevelContainer = styled.div`
         margin: 0;
     }
 `;
+
+export const NoResults = styled.p`
+    font-size: 32px;
+    text-align: center;
+    padding: 1rem;
+`

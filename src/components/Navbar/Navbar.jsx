@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { NavbarContainerStyled, LogoImg, LinksContainerStyled, MenuContainerStyled, NavLinkStyled, Fondo } from './NavbarStyles'
 import Logo from '../../../public/assets/Logo.png';
 import Icon from './Icon';
-import { MenuContext } from "../../context/Context";
+import { MenuContext, PopupContext } from "../../context/Context";
 import { useContext } from "react";
+import Search from './Search';
+import { FaSearch } from "react-icons/fa";
+import { IconSearchContainer } from './NavbarStyles';
+import Popup from '../../components/Navbar/SearchPopup';
 
 const Navbar = () => {
     const ctx = useContext(MenuContext);
+    const popupCtx = useContext(PopupContext);
+
+    // const [isPopupOpen, setPopupOpen] = useState(false);
+
+    // const openPopup = () => setPopupOpen(true);
+    // const closePopup = () => setPopupOpen(false);
 
     const handleLinkClick = () => {
         // Obtiene el ancho de la ventana
@@ -32,11 +42,19 @@ const Navbar = () => {
                     <NavLinkStyled to='/'>Home</NavLinkStyled>
                     <NavLinkStyled to='categories'>Courses</NavLinkStyled>
                     <NavLinkStyled to='about'>About us</NavLinkStyled>
-                    <NavLinkStyled to='/#'>Jobs</NavLinkStyled>
                     <NavLinkStyled to='contact'>Contact</NavLinkStyled>
                 </LinksContainerStyled>
+                <Search />
+                <IconSearchContainer $clicked={popupCtx.isPopupOpen} onClick={popupCtx.openPopup}>
+                    <FaSearch />
+                </IconSearchContainer>
                 <Icon />
             </NavbarContainerStyled>
+
+            <Popup isOpen={popupCtx.isPopupOpen} onClose={popupCtx.closePopup}>
+                <h3>Search</h3>
+                <Search />
+            </Popup>
         </>
     )
 }

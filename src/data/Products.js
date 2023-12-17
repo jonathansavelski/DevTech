@@ -299,4 +299,16 @@ export const products = [
         duration: "9 weeks (35 hrs)",
         level: "Intermediate"
     }
-]
+];
+
+export const TotalProducts = products.length;
+
+export const Products = products.reduce((acc, product) => {
+    if (!acc[product.category]) {
+        acc[product.category] = [];
+    }
+
+    acc[product.category] = [...acc[product.category], product];
+
+    return acc;
+}, {});

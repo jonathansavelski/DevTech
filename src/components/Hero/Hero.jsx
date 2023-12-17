@@ -39,7 +39,7 @@ const Hero = () => {
                     <img src={Accenture} alt="Accenture" />
                 </PartnershipContainer>
                 <ArrowContainer>
-                    <a href="#products"><IoIosArrowDown /></a>
+                    <a href="#recommended"><IoIosArrowDown /></a>
                 </ArrowContainer>
             </SubContainer>
         </ContainerStyled>

@@ -1,4 +1,4 @@
-export const categories = [
+export const Categories = [
     {
         id: 1,
         img: "../../assets/Categories/Java.png",
