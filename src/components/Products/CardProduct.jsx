@@ -13,12 +13,21 @@ import AdvancedImg from '../../../public/assets/Levels/Advanced.png'
 import { discountedPercent } from '../../utils/DiscountedPercent';
 import { useSelector } from 'react-redux';
 
-const CardProduct = ({ title, desc, price, duration, level }) => {
+const CardProduct = ({ title, id, desc, price, duration, level }) => {
 
     // Calcular el precio con descuento del 20%
     const discountedPrice = (price * (1 - discountedPercent)).toFixed(2);
 
     const productUrl = `/product/${title}`;
+
+    const productState = {
+        title,
+        id,
+        desc,
+        price,
+        duration,
+        level,
+    };
 
     const levelImage = (level) => {
         if (level === 'Beginner') {
@@ -34,7 +43,7 @@ const CardProduct = ({ title, desc, price, duration, level }) => {
 
     return (
         <CardContainer>
-            <Link to={productUrl}>
+            <Link to={productUrl} state={productState}>
                 <ProductsCard>
                     <h3>{title}</h3>
                     <p>{desc}</p>

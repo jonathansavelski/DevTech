@@ -39,7 +39,7 @@ const Footer = () => {
             <p>Need help? +1 1111 1111</p>
             <hr />
             <Copyright>
-                <a href="">Términos y Condiciones</a>
+                <a href="">Terms and conditions</a>
                 <p>DevTech Academy © 2023</p>
             </Copyright>
         </FooterContainer>

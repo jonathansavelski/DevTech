@@ -18,16 +18,7 @@ import Categories from '../pages/Categories/Categories';
 import Products from '../pages/Products/Products';
 import Product from '../pages/Product/Product';
 import SearchResults from '../pages/SearchResults/SearchResults';
-// import User from '../pages/User/User';
-// import { Login } from "../pages/Login/Login";
-import { useState } from 'react';
-//Context
-import { useContext } from 'react';
-//import Products from '../components/Products/Products';
-
-//import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
-//import AuthContext, { AuthProvider } from '../context/AuthContext';
-
+import Cart from '../pages/Cart/Cart'
 
 export const Routes = () => {
     //const isAuth = useContext(AuthContext);
@@ -54,7 +45,7 @@ export const Routes = () => {
                         <Route path=':product' element={<Product />} />
                     </Route>
                     <Route path='results' element={<SearchResults />} />
-
+                    <Route path='cart' element={<Cart />} />
                     <Route path='*' element={<Error />} />
                 </ReactDomRoutes>
             </Layout>
